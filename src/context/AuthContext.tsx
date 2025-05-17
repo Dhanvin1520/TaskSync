@@ -3,7 +3,7 @@ import api from '../utils/api';
 import { setAuthToken, removeAuthToken, getStoredUser, setStoredUser, isAuthenticated } from '../utils/auth';
 import type { AuthState, LoginFormData, RegisterFormData, User } from '../types';
 
-// Define action types
+
 type AuthAction =
   | { type: 'LOGIN_REQUEST' }
   | { type: 'LOGIN_SUCCESS'; payload: { user: User; token: string } }
@@ -15,7 +15,7 @@ type AuthAction =
   | { type: 'LOAD_USER' }
   | { type: 'AUTH_ERROR' };
 
-// Initial state
+
 const initialState: AuthState = {
   user: getStoredUser(),
   token: localStorage.getItem('token'),
@@ -24,7 +24,7 @@ const initialState: AuthState = {
   error: null,
 };
 
-// Create the auth context
+
 const AuthContext = createContext<{
   state: AuthState;
   login: (formData: LoginFormData) => Promise<void>;
@@ -37,7 +37,7 @@ const AuthContext = createContext<{
   logout: () => {},
 });
 
-// Reducer function
+
 const authReducer = (state: AuthState, action: AuthAction): AuthState => {
   switch (action.type) {
     case 'LOGIN_REQUEST':
@@ -86,11 +86,11 @@ const authReducer = (state: AuthState, action: AuthAction): AuthState => {
   }
 };
 
-// AuthProvider component
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  // Login function
+  
   const login = async (formData: LoginFormData) => {
     dispatch({ type: 'LOGIN_REQUEST' });
 
@@ -118,7 +118,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  // Register function
+
   const register = async (formData: RegisterFormData) => {
     dispatch({ type: 'REGISTER_REQUEST' });
 
@@ -146,7 +146,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  // Logout function
+
   const logout = () => {
     removeAuthToken();
     dispatch({ type: 'LOGOUT' });
@@ -159,5 +159,5 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 };
 
-// Custom hook to use auth context
+
 export const useAuth = () => useContext(AuthContext);
