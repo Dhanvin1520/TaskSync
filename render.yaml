@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tasksync-backend
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+
+  - type: web
+    name: tasksync-frontend
+    env: static
+    rootDir: src
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
