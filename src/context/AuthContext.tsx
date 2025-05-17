@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import api from '../utils/api';
 import { setAuthToken, removeAuthToken, getStoredUser, setStoredUser, isAuthenticated } from '../utils/auth';
 import type { AuthState, LoginFormData, RegisterFormData, User } from '../types';
