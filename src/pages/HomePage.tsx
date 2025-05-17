@@ -27,14 +27,14 @@ const HomePage: React.FC = () => {
                     <Button
                       variant="primary"
                       size="lg"
-                      className="bg-white text-blue-600 hover:bg-gray-100"
+                      className="border border-white text-blue-600 hover:bg-white hover:text-blue-600 transition duration-200 rounded-md"
                       rightIcon={<ArrowRight size={20} />}
                     >
                       Get Started
                     </Button>
                   </Link>
                   <Link to="/login">
-                    <Button variant="outline" size="lg" className="border-white text-white hover:bg-blue-800">
+                    <Button variant="primary" size="lg"  className="border border-white text-blue-600 hover:bg-white hover:text-blue-600">
                       Log In
                     </Button>
                   </Link>
