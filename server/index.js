@@ -2,13 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 import userRoutes from './routes/users.js';
 import taskRoutes from './routes/tasks.js';
 import authRoutes from './routes/auth.js';
 
-
 dotenv.config();
-
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,20 +24,26 @@ app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
 
 
-app.get('/', (req, res) => {
-  res.send('Task Management API is running');
-});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+
+app.use(express.static(path.resolve(__dirname, '../dist')));
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
+});
 
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('Connected to MongoDB');
+    console.log('✅ Connected to MongoDB');
 
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
-    console.error('Error connecting to MongoDB:', err.message);
+    console.error('❌ Error connecting to MongoDB:', err.message);
   });
