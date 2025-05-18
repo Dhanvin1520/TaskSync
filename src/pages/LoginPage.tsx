@@ -25,7 +25,7 @@ const LoginPage: React.FC = () => {
               <CheckSquare size={48} className="text-blue-600" />
             </div>
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              TaskFlow
+            TaskSync
             </h2>
             <p className="mt-2 text-sm text-gray-600 sm:text-base">
               Sign in to manage your tasks efficiently

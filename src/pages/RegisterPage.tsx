@@ -24,7 +24,7 @@ const RegisterPage: React.FC = () => {
             <div className="flex justify-center">
               <CheckSquare size={48} className="text-blue-600" />
             </div>
-            <h2 className="mt-6 text-3xl font-extrabold text-gray-900">TaskFlow</h2>
+            <h2 className="mt-6 text-3xl font-extrabold text-gray-900">TaskSync</h2>
             <p className="mt-2 text-sm text-gray-600">
               Create an account to start managing your tasks
             </p>

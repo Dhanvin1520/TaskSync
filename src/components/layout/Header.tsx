@@ -21,7 +21,7 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center text-xl font-bold text-blue-600">
               <CheckSquare className="mr-2" />
-              TaskFlow
+              TaskSync
             </Link>
           </div>
 
