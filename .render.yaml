@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: your-app-name
+    env: node
+    plan: free
+    branch: main
+    rootDir: server
+    buildCommand: |
+      cd .. && npm install && npm run build && cd server && npm install
+    startCommand: node index.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: "5000"
