@@ -34,12 +34,13 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       {error && <p className="text-red-500">{error}</p>}
 
       <Input
         label="Email"
         type="email"
+        fullWidth
         {...register('email', { required: 'Email is required' })}
         error={errors.email?.message}
       />
@@ -47,11 +48,12 @@ const LoginForm: React.FC = () => {
       <Input
         label="Password"
         type="password"
+        fullWidth
         {...register('password', { required: 'Password is required' })}
         error={errors.password?.message}
       />
 
-      <Button type="submit" disabled={isLoading}>
+      <Button type="submit" disabled={isLoading} fullWidth>
         <LogIn className="mr-2 h-4 w-4" />
         {isLoading ? 'Logging in...' : 'Login'}
       </Button>
@@ -60,5 +62,3 @@ const LoginForm: React.FC = () => {
 };
 
 export default LoginForm;
-
-

@@ -9,31 +9,29 @@ import { CheckSquare } from 'lucide-react';
 const LoginPage: React.FC = () => {
   const { state } = useAuth();
 
-
   if (state.isAuthenticated) {
     return <Navigate to="/dashboard" />;
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       <Header />
 
-      <main className="flex-grow flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-md space-y-8 sm:space-y-10">
+      <main className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <div className="flex justify-center">
               <CheckSquare size={48} className="text-blue-600" />
             </div>
             <h2 className="mt-6 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            TaskSync
+              TaskSync
             </h2>
             <p className="mt-2 text-sm text-gray-600 sm:text-base">
               Sign in to manage your tasks efficiently
             </p>
           </div>
 
-
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
             <LoginForm />
           </div>
         </div>
@@ -45,5 +43,3 @@ const LoginPage: React.FC = () => {
 };
 
 export default LoginPage;
-
-

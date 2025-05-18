@@ -33,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({
     success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
     outline: 'bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
   };
+// Removed redundant redefinition of the Button component.
 
   const sizeClasses = {
     sm: 'text-sm px-3 py-1.5',
