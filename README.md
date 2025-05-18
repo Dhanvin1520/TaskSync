@@ -4,7 +4,7 @@ Hi! 👋 I’m Dhanvin Vadlamudi.
 This project is a full-stack MERN Task Management app where users can register/login, create, update, delete, and filter tasks by category and status — all in a clean, responsive UI built with React and Tailwind CSS.I treated this as a real-world project to demonstrate my MERN skills with secure JWT authentication, smooth REST API integration, and mobile-first design.
 
 🚀 Live Demo
-🔗 task-sync-o7ks-q47z8kytb-dhanvin699-gmailcoms-projects.vercel.app
+🔗 [task-sync-o7ks-q47z8kytb-dhanvin699-gmailcoms-projects.vercel.app](url)
 
 GitHub Repo
 🔗 https://github.com/Dhanvin1520/TaskSync
